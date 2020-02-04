@@ -12,8 +12,8 @@
 */
 //creating global variables
 var thisDay = new Date("August 30, 2018");
-var tableHTML = "<table id='eventTable'><caption>Upcoming Events</captions><tr><th>Date</th><th>Event</th><th>price</th></tr>";
-var endDate = new Date("thisDay.getTime()+ 14 * 24 * 60 * 60 * 1000");
+var tableHTML = "<table id='eventTable'><caption>Upcoming Events</caption><tr><th>Date</th><th>Event</th><th>price</th></tr>";
+var endDate = new Date(thisDay.getTime()+ 14 * 24 * 60 * 60 * 1000);
 
 // creating loop for calendar
 for(var i = 0; i < eventDates.length; i++){
@@ -24,7 +24,7 @@ for(var i = 0; i < eventDates.length; i++){
     if(thisDay <= eventDate && eventDate <= endDate){
         tableHTML += "<tr>";
         tableHTML += "<td>" + eventDay + "@" + eventTime + "</td>";
-        tableHTML += "<td>" + description + "</td>";
+        tableHTML += "<td>" + eventDescriptions[i] + "</td>";
         tableHTML += "<td>" + eventPrices[i] + "</td>";
         tableHTML += "</tr>";
     }
@@ -32,7 +32,7 @@ for(var i = 0; i < eventDates.length; i++){
 }
 tableHTML += "</table>";
 
-document.innerHTML = tableHTML;
+document.getElementById("eventList").innerHTML = tableHTML;
 
 
 
