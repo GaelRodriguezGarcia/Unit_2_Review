@@ -32,5 +32,7 @@ for(var i = 0; i < eventDates.length; i++){
 }
 tableHTML += "</table>";
 
+document.innerHTML = tableHTML;
+
 
 
